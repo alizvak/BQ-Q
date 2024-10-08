@@ -5,7 +5,7 @@ DECLARE end_date STRING DEFAULT '2024-12-31';
 WITH purchase_events AS (
   -- Extracting unique users who made a purchase
   SELECT DISTINCT user_pseudo_id
-  -- Replace with your own project and dataset ID
+  -- Replace with your own project and dataset ID 
   FROM `project.dataset.events_*`
   WHERE event_name = 'purchase'
     AND _TABLE_SUFFIX BETWEEN REPLACE(start_date, '-', '') AND REPLACE(end_date, '-', '')
