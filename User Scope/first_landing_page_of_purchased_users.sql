@@ -19,6 +19,7 @@ initial_landing_pages AS (
       PARTITION BY user_pseudo_id 
       ORDER BY event_timestamp
     ) AS landing_page_url
+    -- Replace with your own project and dataset ID
   FROM `project.dataset.events_*`,
   UNNEST(event_params) AS params
   WHERE event_name = 'page_view' 
