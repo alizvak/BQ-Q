@@ -26,6 +26,7 @@ WITH user_events AS (
       WHERE KEY = 'engagement_time_msec'
     ) AS engagement_time_msec,
     ecommerce.purchase_revenue
+    -- Replace with your own project and dataset ID
   FROM `project.dataset.events_*`
   WHERE _TABLE_SUFFIX BETWEEN REPLACE(start_date, '-', '') AND REPLACE(end_date, '-', '')
 ),
