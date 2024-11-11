@@ -69,7 +69,6 @@ page_view_counts AS (
   FROM page_view_events
   GROUP BY page_location
 )
-
 -- Final output: Join revenue summary and view counts to get page value
 SELECT
   pvc.page_location,
