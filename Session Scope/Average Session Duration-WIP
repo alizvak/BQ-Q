@@ -1,0 +1,6 @@
+SELECT 
+  AVG((SELECT MAX(event_timestamp) - MIN(event_timestamp) FROM `<your_project>.<your_dataset>.<your_table>` WHERE event_name = 'session_start')) / 1000 AS avg_session_duration_seconds
+FROM 
+  `<your_project>.<your_dataset>.<your_table>`
+WHERE 
+  event_name = 'session_start';
