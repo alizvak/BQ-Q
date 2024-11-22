@@ -53,7 +53,6 @@ user_cohort AS (
   FROM signup_events ss
   JOIN purchase_events pe ON ss.user_pseudo_id = pe.user_pseudo_id
   JOIN first_page_view_sources fps ON ss.user_pseudo_id = fps.user_pseudo_id
-  WHERE TIMESTAMP_DIFF(TIMESTAMP_MICROS(pe.purchase_timestamp), TIMESTAMP_MICROS(ss.signup_events_timestamp), DAY) <= 90
 )
 
 -- Aggregate users and calculate average days to purchase by source and medium
