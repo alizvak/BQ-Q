@@ -2,68 +2,70 @@
 DECLARE start_date STRING DEFAULT '2024-01-01';
 DECLARE end_date STRING DEFAULT '2024-12-31';
 
-WITH page_view_events AS (
-  -- Extract and process page view events with session-level identifiers
+WITH page_view_data AS (
+  -- Extract page view data with previous and next page navigation details
   SELECT
-    -- Unique session identifier combining user_pseudo_id and ga_session_id
+    -- Unique session identifier combining user ID and session ID
     CONCAT(
       user_pseudo_id, '-', 
-      CAST((SELECT value.int_value FROM UNNEST(event_params) WHERE key = 'ga_session_id') AS STRING)
-    ) AS unique_session_id,
-    event_name,
-    event_timestamp,
-    -- Extract page path by removing protocol, domain, and query parameters
+        (SELECT value.int_value 
+         FROM UNNEST(event_params) 
+         WHERE key = 'ga_session_id') 
+    ) AS session_id,
+    user_pseudo_id,
+    -- Extract and normalize the page location to get the page path
     REGEXP_REPLACE(
       REGEXP_REPLACE(
-        (SELECT p.value.string_value FROM UNNEST(event_params) AS p WHERE p.key = 'page_location'),
-        r'^https?://[^/]+',
-        ''
+        (SELECT value.string_value 
+         FROM UNNEST(event_params) 
+         WHERE key = 'page_location'),
+        r'^https?://[^/]+', '' -- Remove the domain
       ),
-      r'\?.*',
-      ''
-    ) AS page_path
+      r'[\?].*', '' -- Remove query parameters
+    ) AS page_path,
+    event_timestamp
   FROM
     `project.dataset.events_*` -- Replace with your own project and dataset ID
   WHERE
     event_name = 'page_view'
     AND _TABLE_SUFFIX BETWEEN REPLACE(start_date, '-', '') AND REPLACE(end_date, '-', '') -- Dynamic date filtering
+),
+
+page_navigation AS (
+  -- Derive navigation patterns using LAG and LEAD functions
+  SELECT
+    session_id,
+    user_pseudo_id,
+    -- Previous page
+    LAG(page_path) OVER (
+      PARTITION BY user_pseudo_id, session_id 
+      ORDER BY event_timestamp ASC
+    ) AS previous_page,
+    -- Current page
+    page_path AS current_page,
+    -- Next page
+    LEAD(page_path) OVER (
+      PARTITION BY user_pseudo_id, session_id 
+      ORDER BY event_timestamp ASC
+    ) AS next_page,
+    event_timestamp
+  FROM 
+    page_view_data
 )
 
--- Calculate previous and next page paths
-SELECT
-  unique_session_id,
-  event_name,
-  page_path,
-  event_timestamp,
-  -- Determine the previous page within the session
-  IF(
-    event_name = 'page_view',
-    COALESCE(
-      LAST_VALUE(page_path IGNORE NULLS)
-      OVER (
-        PARTITION BY unique_session_id
-        ORDER BY event_timestamp ASC 
-        ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING
-      ),
-      '(entrance)'
-    ),
-    NULL
-  ) AS previous_page,
-  -- Determine the next page within the session
-  IF(
-    event_name = 'page_view',
-    COALESCE(
-      FIRST_VALUE(page_path IGNORE NULLS)
-      OVER (
-        PARTITION BY unique_session_id
-        ORDER BY event_timestamp ASC 
-        ROWS BETWEEN 1 FOLLOWING AND UNBOUNDED FOLLOWING
-      ),
-      '(exit)'
-    ),
-    NULL
-  ) AS next_page
-FROM
-  page_view_events
-ORDER BY
-  unique_session_id, event_timestamp;
+-- Aggregate navigation patterns and calculate session counts
+SELECT 
+  IFNULL(previous_page, '(entrance)') AS previous_page,
+  current_page,
+  IFNULL(next_page, '(exit)') AS next_page,
+  COUNT(DISTINCT session_id) AS session_count
+FROM 
+  page_navigation
+GROUP BY 
+  previous_page,
+  current_page,
+  next_page
+HAVING 
+  current_page NOT IN (previous_page, next_page) -- Filter out loops
+ORDER BY 
+  session_count DESC; -- Order by the most common navigation patterns
