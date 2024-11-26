@@ -11,3 +11,8 @@
 16- correlation between CLV and number of sessions
 17 -  Query Billing Export
 18 - Group All Entries By Acquisition
+19 - Traffic share per device category
+20- Frequently viewed items
+21- most popular landing pages
+22- calculate the consent rate :
+
