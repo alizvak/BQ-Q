@@ -9,7 +9,7 @@ WITH user_sessions AS (
         (SELECT value.int_value FROM UNNEST(event_params) WHERE key = 'ga_session_id') AS session_id,
         (SELECT value.int_value FROM UNNEST(event_params) WHERE key = 'ga_session_number') AS session_number
     FROM
-        `ga4-janebi.analytics_307705149.events_*`
+    `project.dataset.events_*`, -- Replace with your own project and dataset ID
     WHERE 
         _TABLE_SUFFIX BETWEEN REPLACE(start_date, '-', '') AND REPLACE(end_date, '-', '') -- Date range filter
 ),
