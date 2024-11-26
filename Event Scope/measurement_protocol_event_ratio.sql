@@ -1,6 +1,6 @@
 -- Declare date range variables for filtering
 DECLARE start_date STRING DEFAULT '2024-01-01';
-DECLARE end_date STRING DEFAULT '2024-10-01';
+DECLARE end_date STRING DEFAULT '2024-12-31';
 
 WITH event_data AS (
   -- Extract essential fields for analysis
