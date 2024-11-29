@@ -15,4 +15,6 @@
 20- Frequently viewed items
 21- most popular landing pages
 22- calculate the consent rate :
+23- gads account name 
+24- GA4-bigquery-tips
 
