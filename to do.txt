@@ -1,14 +1,9 @@
-
-
 8- Costs Query - Table Creation Time
-9- MP events
 10- flat_events
 11- Which City has more Users
 12- new vs returning user per day
 13- Calculate Session Conversion Rate
 14- Identify Most Popular Pathing For Any Page
-15- Calculate ARPU
-16- correlation between CLV and number of sessions
 17 -  Query Billing Export
 18 - Group All Entries By Acquisition
 19 - Traffic share per device category
