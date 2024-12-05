@@ -1,15 +1,6 @@
-8- Costs Query - Table Creation Time
-10- flat_events
-11- Which City has more Users
-12- new vs returning user per day
-13- Calculate Session Conversion Rate
-14- Identify Most Popular Pathing For Any Page
 17 -  Query Billing Export
 18 - Group All Entries By Acquisition
-19 - Traffic share per device category
 20- Frequently viewed items
-21- most popular landing pages
-22- calculate the consent rate :
 23- gads account name 
 24- GA4-bigquery-tips
 
