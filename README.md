@@ -1,15 +1,8 @@
-Welcome to the **BigQuery-GA4-Queries** repository! This open-source collection is a curated set of SQL queries specifically designed for analyzing and extracting insights from **Google Analytics 4 (GA4)** exported data in BigQuery. Over years of working with GA4 data exports, these queries have become my go-to tools for daily reporting and analysis, and I am excited to share them with the community.
+Welcome to the **BigQuery-GA4-Queries** repository! This open-source collection is a curated set of SQL queries specifically designed for analyzing and extracting insights from **Google Analytics 4 (GA4)** exported data in BigQuery. Over years of working with GA4 data exports, these queries have become my go-to tools for daily reporting and analysis, and I am excited to share them.
 
 ## What’s Included?
 
-This repository contains a diverse set of **ready-to-use and fully customizable queries**, grouped into logical folders for easier access and organization. Each query is designed to handle common and advanced use cases, from session analysis and ecommerce reporting to traffic attribution and user behavior exploration.
-
-Key features of the queries include:
-- **Declarable Date Ranges:** Queries include `DECLARE` statements for start and end dates, making it simple to define your desired reporting period.
-- **Customizable Table References:** Replaceable project and dataset IDs (`project.dataset.events_*`) ensure that the queries can adapt instantly to your specific BigQuery setup.
-- **Plug-and-Play Usage:** With minimal configuration, you can set up these queries and start generating actionable reports right away.
-- **Insightful Metrics:** Queries span a wide range of applications, such as ecommerce performance, user retention, funnel analysis, traffic source attribution, storage costs, and more.
-- **Schema Updates:** The queries are regularly updated to reflect changes in GA4 schema and BigQuery functionality. However, occasional adjustments may be needed as Google evolves its data export formats.
+This repository contains a +50 diverse set of **ready-to-use and fully customizable queries**, grouped into logical folders for easier access and organization. Each query is designed to handle common and advanced use cases, from session analysis and ecommerce reporting to traffic attribution and user behavior exploration.
 
 ## How to Use
 
