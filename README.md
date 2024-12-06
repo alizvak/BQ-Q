@@ -19,37 +19,50 @@ This section provides a detailed breakdown of the queries included in the reposi
 **Focus Area**  
 The **Event Scope** folder focuses on event-level data, providing insights into user interactions, specific event occurrences, and detailed behavioral metrics. These queries are tailored to extract information about individual events, their attributes, and how they contribute to overall user engagement and business outcomes.
 
-#### **1. flatten_events.sql**  
+#### **1. flatten_events.sql**
+
 **Description:**  
-This query flattens GA4 event data, unnesting arrays like `event_params` and `user_properties` into a single comprehensive table for easier analysis.  
+This query flattens GA4 event data by unnesting arrays such as `event_params`, `user_properties`, and `items` into a single, comprehensive table. It simplifies the complex nested structures of GA4 data, making it easier to perform detailed analysis on event-level data.
 
-**Application:**  
-- Prepare raw GA4 event data for detailed analysis.  
-- Use this as a base query for building advanced metrics and reports.  
+**Applications:**
 
-#### **2. ga4_full_metrics_summary.sql**  
+- **Data Preparation:** Prepares raw GA4 event data for detailed analysis and reporting.
+- **Advanced Analytics:** Facilitates building advanced metrics and custom reports based on event parameters and user properties.
+- **Machine Learning:** Provides a flat data structure suitable for machine learning models and statistical analysis.
+
+#### **2. ga4_full_metrics_summary.sql**
+
 **Description:**  
-A comprehensive query that provides daily metrics for sessions and events, summarizing key data points for performance tracking.  
+Provides a comprehensive summary of key GA4 metrics on a daily basis. It aggregates data such as total users, sessions, events, and conversions, offering a high-level overview of account performance over time.
 
-**Application:**  
-- Monitor daily session and event metrics at a high level.  
-- Generate reports for overall GA4 account activity trends.  
+**Applications:**
 
-#### **3. measurement_protocol_event_ratio.sql**  
+- **Performance Monitoring:** Monitor daily performance trends across key metrics.
+- **Reporting:** Generate executive summaries or dashboards highlighting overall GA4 account activity.
+- **Anomaly Detection:** Identify anomalies or significant changes in user engagement or conversions.
+
+#### **3. measurement_protocol_event_ratio.sql**
+
 **Description:**  
-Analyzes the ratio of events suspected to originate from measurement protocol (non-consented events) versus all events.  
+Tracks the ratio of suspected measurement protocol events based on device attributes. It calculates the ratio of events with null language and operating system values and categorized as desktop.
 
-**Application:**  
-- Evaluate the impact of non-consented events on your overall dataset.  
-- Understand the proportion of events that may require additional tracking consideration.  
+**Applications:**
 
-#### **4. user_event_counts_pivot_table.sql**  
+- **Data Quality Assurance:** Evaluate the impact of non-consented or synthetic events on your dataset.
+- **Event Filtering:** Identify and filter out events that may not represent actual user interactions.
+- **Trend Analysis:** Monitor the proportion of suspected measurement protocol events over time to ensure data integrity.
+
+#### **4. user_event_counts_pivot_table.sql**
+
 **Description:**  
-Creates a pivot table summarizing event counts per user, broken down by event type.  
+This query counts the number of events that each user has triggered and pivots the results by event name.
 
-**Application:**  
-- Analyze user-level event engagement patterns.  
-- Compare engagement across different types of events (e.g., page views, purchases).  
+**Applications:**
+
+- **User Behavior Insights:** Offers insights into user preferences and behaviors.
+- **Event Popularity Analysis:** Determine what events are more common among users, especially those who have made purchases.
+- **Segmentation:** Segment users based on their interaction with different event types for targeted marketing.
+
 
 
 ## Open-Source Collaboration
