@@ -10,96 +10,46 @@ This repository contains a +50 diverse set of **ready-to-use and fully customiza
 2. Adjust the `DECLARE` statements at the beginning of each query to define your desired reporting dates.
 3. Run the queries in BigQuery to instantly generate reports tailored to your needs.
 
-# Query Explanations
+## Query Handbook
 
 This section provides a detailed breakdown of the queries included in the repository, organized into hierarchical folders based on their focus. Each folder contains queries grouped by their purpose, with descriptions and applications for easy understanding and quick deployment.
 
----
+### **Event Scope**
 
-## **Event Scope**
-
-### **Folder Focus**  
+**Focus Area**  
 The **Event Scope** folder focuses on event-level data, providing insights into user interactions, specific event occurrences, and detailed behavioral metrics. These queries are tailored to extract information about individual events, their attributes, and how they contribute to overall user engagement and business outcomes.
 
----
-
-### **List of Queries**
-
-#### **1. Event Frequency Analysis**  
+#### **1. flatten_events.sql**  
 **Description:**  
-This query calculates the frequency of specific events across users and sessions, identifying which events occur most often and their contribution to user engagement.  
+This query flattens GA4 event data, unnesting arrays like `event_params` and `user_properties` into a single comprehensive table for easier analysis.  
 
 **Application:**  
-- Analyze which events are most frequently triggered by users.  
-- Identify potential overuse or underuse of specific events for optimization.  
-- Track event trends over time.
+- Prepare raw GA4 event data for detailed analysis.  
+- Use this as a base query for building advanced metrics and reports.  
 
----
-
-#### **2. Event Engagement Time**  
+#### **2. ga4_full_metrics_summary.sql**  
 **Description:**  
-Retrieves the total engagement time (in seconds) for specific events to understand how much time users spend on various interactions.  
+A comprehensive query that provides daily metrics for sessions and events, summarizing key data points for performance tracking.  
 
 **Application:**  
-- Measure user interaction quality for key events.  
-- Analyze the time spent on different event types to improve user experience.  
+- Monitor daily session and event metrics at a high level.  
+- Generate reports for overall GA4 account activity trends.  
 
----
-
-#### **3. Top Event Parameters**  
+#### **3. measurement_protocol_event_ratio.sql**  
 **Description:**  
-Extracts the most commonly used parameters for a given event and provides insights into their values and occurrences.  
+Analyzes the ratio of events suspected to originate from measurement protocol (non-consented events) versus all events.  
 
 **Application:**  
-- Identify which event parameters are contributing most to user actions.  
-- Fine-tune event parameter tracking for better attribution and understanding.  
+- Evaluate the impact of non-consented events on your overall dataset.  
+- Understand the proportion of events that may require additional tracking consideration.  
 
----
-
-#### **4. Event Geo Analysis**  
+#### **4. user_event_counts_pivot_table.sql**  
 **Description:**  
-Provides a geographic breakdown of event occurrences, helping identify the location-based distribution of user interactions.  
+Creates a pivot table summarizing event counts per user, broken down by event type.  
 
 **Application:**  
-- Analyze event distribution by country, region, or city.  
-- Tailor marketing campaigns to regions with high engagement.  
-
----
-
-#### **5. Event Comparison by User Type**  
-**Description:**  
-Compares event engagement between new and returning users, highlighting differences in behavior.  
-
-**Application:**  
-- Understand how user segments interact with key events.  
-- Optimize onboarding and retention strategies based on user behavior.  
-
----
-
-#### **6. Custom Event Funnel**  
-**Description:**  
-Builds a funnel analysis for specific custom events to track user journeys across defined touchpoints.  
-
-**Application:**  
-- Analyze drop-offs and conversions at each stage of a custom event funnel.  
-- Refine user flows to reduce friction and increase conversions.  
-
----
-
-#### **7. Event Time Distribution**  
-**Description:**  
-Provides a time-based analysis of event occurrences to identify peak interaction hours or days.  
-
-**Application:**  
-- Understand when users are most active with specific events.  
-- Schedule campaigns and updates during high engagement periods.  
-
----
-
-### Next Steps  
-
-Let me know if you'd like to proceed to the next folder and its queries, or make any adjustments to the structure and descriptions!
-
+- Analyze user-level event engagement patterns.  
+- Compare engagement across different types of events (e.g., page views, purchases).  
 
 
 ## Open-Source Collaboration
