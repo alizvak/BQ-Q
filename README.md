@@ -19,6 +19,8 @@ This section provides a detailed breakdown of the queries included in the reposi
 **Focus Area**  
 The **Event Scope** folder focuses on event-level data, providing insights into user interactions, specific event occurrences, and detailed behavioral metrics. These queries are tailored to extract information about individual events, their attributes, and how they contribute to overall user engagement and business outcomes.
 
+---
+
 #### **1. flatten_events.sql**
 
 **Description:**  
@@ -68,6 +70,9 @@ This query counts the number of events that each user has triggered and pivots t
 - **User Behavior Insights:** Offers insights into user preferences and behaviors.
 - **Event Popularity Analysis:** Determine what events are more common among users, especially those who have made purchases.
 - **Segmentation:** Segment users based on their interaction with different event types for targeted marketing.
+
+---
+
 
 ### **Session Scope**
 
@@ -254,7 +259,6 @@ Adds retention cohort analysis by weekly engagement, tracking how many users ret
 
 - **Retention Strategies:** Evaluate user retention over time.
 - **Behavior Insights:** Understand weekly re-engagement trends.
-- **Product Success:** Identify features or updates that boost retention.
 
 ---
 
@@ -267,20 +271,18 @@ Groups sessions by traffic source and medium, categorizing them into predefined 
 
 - **Channel Performance:** Analyze how different channels drive sessions.
 - **Marketing Optimization:** Allocate resources to high-performing channels.
-- **Traffic Insights:** Understand the composition of your traffic.
 
 ---
 
 #### **16. session_conversion_rate.sql**
 
 **Description:**  
-Analyzes the session conversion rate by comparing the number of sessions with a key event (e.g., purchase, add to cart) against total sessions.
+Analyzes the session conversion rate by comparing the number of sessions with a purchase against total sessions.
 
 **Applications:**
 
 - **Conversion Optimization:** Identify high-converting sessions.
 - **Traffic Analysis:** Improve conversion rates by studying low-converting sessions.
-- **Ecommerce Growth:** Boost revenue by understanding session behavior.
 
 ---
 
@@ -306,7 +308,8 @@ Analyzes traffic acquisition and related metrics, providing insights into the pe
 
 - **Marketing Campaign Analysis:** Evaluate campaign effectiveness.
 - **Source Optimization:** Focus on high-performing traffic sources.
-- **Traffic Insights:** Understand the composition and quality of acquired users.
+
+---
 
 
 
