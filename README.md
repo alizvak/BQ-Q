@@ -573,14 +573,199 @@ Summarizes user transactions, including total revenue and transaction count, gro
 
 ---
 
+### **eCommerce**
 
+**Focus Area:**  
+Provides insights into eCommerce performance metrics, including transaction analysis, item-level stats, and sequential funnel conversions.
 
+---
 
+#### **1. daily_sequential_ecommerce_funnel.sql**
+
+**Description:**  
+Analyzes the daily eCommerce conversion funnel, tracking user progression through stages like `view_item`, `add_to_cart`, `begin_checkout`, and `purchase`.
+
+**Applications:**
+
+- **Conversion Funnel Optimization:** Pinpoint where users drop off in the eCommerce funnel.
+- **Performance Tracking:** Monitor daily conversion rates for key funnel stages.
+- **Behavioral Insights:** Identify patterns in user actions leading to purchases.
+
+---
+
+#### **2. daily_transaction_metrics.sql**
+
+**Description:**  
+Provides a daily summary of transactions and revenue, aggregated by event date.
+
+**Applications:**
+
+- **Revenue Monitoring:** Track daily sales performance.
+- **Trend Analysis:** Spot patterns or anomalies in daily transactions.
+- **Campaign Evaluation:** Assess the impact of campaigns on daily revenue.
+
+---
+
+#### **3. item_stats.sql**
+
+**Description:**  
+Generates statistics on top-performing items, including total quantity sold, total purchases, and revenue generated.
+
+**Applications:**
+
+- **Product Performance Analysis:** Identify best-selling items by revenue and quantity.
+- **Inventory Management:** Align stock levels with high-demand products.
+- **Promotion Planning:** Focus promotions on top-performing items.
+
+---
+
+#### **4. items_sequential_ecommerce_funnel.sql**
+
+**Description:**  
+Tracks the sequential funnel for individual items, including user interactions like `view_item`, `add_to_cart`, `begin_checkout`, and `purchase`.
+
+**Applications:**
+
+- **Item-Level Insights:** Understand conversion paths for specific items.
+- **Funnel Optimization:** Improve individual product performance within the funnel.
+- **Marketing Alignment:** Tailor campaigns to support specific items.
+
+---
+
+#### **5. transaction_id_stats.sql**
+
+**Description:**  
+Breaks down eCommerce transaction data by transaction ID, including revenue, refunds, shipping, tax, and unique items sold.
+
+**Applications:**
+
+- **Transaction Analysis:** Gain detailed insights into individual transactions.
+- **Refund Monitoring:** Identify transactions with high refund values.
+- **Revenue Breakdown:** Understand the contribution of tax and shipping to total revenue.
+
+---
+
+### **Consent Mode**
+
+**Focus Area:**  
+Analyzes and estimates user behavior and event counts based on consent status. Provides insights into how consent impacts event tracking and user metrics.
+
+---
+
+#### **1. consent_status_summary.sql**
+
+**Description:**  
+Summarizes events and users categorized by their consent status (`granted` or `denied`) and calculates their event share.
+
+**Applications:**
+
+- **Consent Status Analysis:** Understand the distribution of consented and non-consented events.
+- **Event Tracking Insights:** Measure the impact of consent status on event collection.
+- **Compliance Evaluation:** Ensure adherence to privacy and consent requirements.
+
+---
+
+#### **2. estimated_users_by_consent_state.sql**
+
+**Description:**  
+Estimates the number of users based on consent status using predefined factors for granted and denied consents.
+
+**Applications:**
+
+- **User Estimation:** Provide reliable user metrics in scenarios with incomplete consent.
+- **Adjust Analytics:** Account for underreported user data due to denied consent.
+- **Privacy-Friendly Reporting:** Generate accurate reports while respecting user consent.
+
+---
+
+#### **3. non_consented_events_by_country.sql**
+
+**Description:**  
+Analyzes the number of non-consented events across different countries and dates.
+
+**Applications:**
+
+- **Geo-Privacy Insights:** Identify countries with higher rates of non-consented events.
+- **Regional Policy Adjustments:** Tailor strategies to comply with local privacy regulations.
+- **Event Data Monitoring:** Detect gaps in event collection due to consent status.
+
+---
+
+### **BigQuery Administration**
+
+**Focus Area:**  
+Monitors and optimizes BigQuery usage, costs, and efficiency related to GA4 data. Provides insights into table management, storage costs, and query performance.
+
+---
+
+#### **1. connected_sheets_costs.sql**
+
+**Description:**  
+Tracks the daily costs of queries made via Connected Sheets in BigQuery, analyzing data usage and associated expenses.
+
+**Applications:**
+
+- **Cost Analysis:** Identify heavy data usage in Connected Sheets queries.
+- **Expense Monitoring:** Track and control daily query costs.
+- **Usage Insights:** Understand the impact of Connected Sheets on BigQuery costs.
+
+---
+
+#### **2. ga4_dataset_storage_cost.sql**
+
+**Description:**  
+Compares the costs of logical and physical storage for datasets. By default, datasets in BigQuery are set to logical storage. For most GA4 datasets, switching to physical storage can result in significant cost savings without impacting performance. 
+
+**Applications:**
+
+- **Cost Optimization:** Assess the benefits of switching from logical to physical storage for GA4 datasets.
+- **Budgeting:** Estimate and monitor storage costs to ensure efficient resource allocation.
+- **Efficiency Tracking:** Identify opportunities for cost reduction in storage utilization.
+
+---
+
+#### **3. ga4_table_creation_time.sql**
+
+**Description:**  
+Retrieves the creation time of GA4 event tables to monitor when new data becomes available. By analyzing the average creation time, you can schedule your queries to ensure they always run on the latest data.
+
+**Applications:**
+
+- **Scheduled Query Monitoring:** Set up query schedules to match the arrival of new GA4 data.
+- **Data Availability Tracking:** Verify the freshness and consistency of incoming GA4 data.
+- **Debugging:** Diagnose potential delays in table creation that may disrupt downstream workflows.
+
+---
+
+#### **4. looker_studio_big_spenders.sql**
+
+**Description:**  
+Identifies the most expensive users and Looker Studio reports based on their BigQuery query costs.
+
+**Applications:**
+
+- **Cost Accountability:** Pinpoint high-cost users .
+- **Query Optimization:** Investigate expensive queries for optimization opportunities.
+
+---
+
+#### **5. looker_studio_dashboards_costs.sql**
+
+**Description:**  
+Analyzes Looker Studio report-level job activity and costs, focusing on dashboard usage.
+
+**Applications:**
+
+- **Dashboard Cost Analysis:** Understand the cost breakdown of Looker Studio dashboards.
+- **Resource Management:** Allocate resources to optimize cost-performance balance.
+- **Usage Insights:** Monitor Looker Studio query patterns.
+
+---
 
 
 ## Open-Source Collaboration
 
-This repository is and will always remain **open source**. Contributions are highly encouraged! If you have suggestions, improvements, or new queries to share, feel free to submit a pull request. Together, we can expand this library into a comprehensive resource for GA4 analysis.
+This repository is and will always remain **open source**. Contributions are highly encouraged! If you have suggestions, improvements, or new queries to share,feel free to submit a pull request. Together, we can expand this library into a comprehensive resource for GA4 analysis.
 
 ## About This Repository
 
