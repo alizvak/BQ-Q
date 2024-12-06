@@ -311,6 +311,269 @@ Analyzes traffic acquisition and related metrics, providing insights into the pe
 
 ---
 
+### User Scope
+
+**Focus Area:**  
+The **User Scope** folder focuses on analyzing user behavior, acquisition, and retention. It provides insights into user-level metrics, including revenue, conversion rates, and engagement, helping you understand user lifecycle stages.
+
+---
+
+#### **1. average_revenue_per_user_id.sql**
+
+**Description:**  
+Calculates the average revenue generated per user ID based on lifetime values (LTV).
+
+**Applications:**
+
+- **Revenue Benchmarking:** Measure average user contribution to revenue.
+
+---
+
+#### **2. average_revenue_per_user_pseudo_id.sql**
+
+**Description:**  
+Computes the average revenue generated per user pseudo ID (client_id, Device_id) using LTV metrics.
+
+**Applications:**
+
+- **Revenue Benchmarking:** Measure average user contribution to revenue.
+
+---
+
+#### **3. daily_user_vs_new_user.sql**
+
+**Description:**  
+Compares the number of new and returning users for each day to highlight acquisition trends.
+
+**Applications:**
+
+- **Retention Analysis:** Track engagement from returning users.
+- **Acquisition Monitoring:** Evaluate daily new user influx.
+- **Trend Insights:** Detect seasonal spikes in user activity.
+
+---
+
+#### **4. device_category_user_share.sql**
+
+**Description:**  
+Calculates user distribution across device categories (e.g., mobile, desktop, tablet).
+
+**Applications:**
+
+- **Device Optimization:** Tailor website design for dominant devices.
+- **Audience Insights:** Understand user preferences by device category.
+- **Marketing Strategies:** Target campaigns based on device usage.
+
+---
+
+#### **5. ecommerce_events_by_first_user_landing_page.sql**
+
+**Description:**  
+Attributes key metrics (e.g., views, add-to-cart actions, purchases) to the first landing page visited by users.
+
+**Applications:**
+
+- **Page Optimization:** Improve performance of high-traffic landing pages.
+- **Conversion Tracking:** Measure effectiveness of entry points in the sales funnel.
+- **User Behavior Insights:** Identify high-performing user landing pages for ecommerce events.
+
+---
+
+#### **6. first_landing_page_of_purchased_users.sql**
+
+**Description:**  
+Identifies the first landing page visited by users who eventually made a purchase.
+
+**Applications:**
+
+- **Funnel Optimization:** Focus on entry points that convert into purchases.
+- **Campaign Alignment:** Link campaigns to high-converting pages.
+- **Path-to-Purchase Insights:** Analyze initial steps leading to purchases.
+
+---
+
+#### **7. first_landing_page_of_signedup_users.sql**
+
+**Description:**  
+Identifies the first landing page visited by users who signed up for an account.
+
+**Applications:**
+
+- **Sign-Up Path Optimization:** Refine entry points for user acquisition.
+- **Lead Generation Analysis:** Highlight pages driving account creation.
+- **Conversion Insights:** Map user journeys to sign-up pages.
+
+---
+
+#### **8. first_visit_to_purchase_time_by_traffic_source.sql**
+
+**Description:**  
+Analyzes the time (in days) between a user's first visit and their purchase, grouped by traffic source.
+
+**Applications:**
+
+- **Time-to-Conversion Tracking:** Evaluate purchase timelines.
+- **Source Performance:** Identify traffic sources with shorter conversion times.
+- **Marketing Insights:** Focus on sources driving quick purchases.
+
+---
+
+#### **9. first_visit_to_signup_time_by_traffic_source.sql**
+
+**Description:**  
+Calculates the time (in days) between a user's first visit and their sign-up, grouped by traffic source.
+
+**Applications:**
+
+- **Acquisition Funnel Insights:** Measure effectiveness of sources in driving sign-ups.
+- **User Retention Strategies:** Optimize sources with shorter sign-up times.
+- **Performance Benchmarking:** Compare traffic sources' acquisition speed.
+
+---
+
+#### **10. geographic_user_metrics.sql**
+
+**Description:**  
+Provides geo-location insights, including user, session, and purchase counts grouped by continent, country, and city.
+
+**Applications:**
+
+- **Regional Analysis:** Target marketing efforts by region.
+- **Localization Strategy:** Adapt content and campaigns for specific geographies.
+- **Audience Understanding:** Identify high-performing locations.
+
+---
+
+#### **11. lifetime_value_and_sessions_by_user_id.sql**
+
+**Description:**  
+Calculates the customer lifetime value (CLV) and total sessions for each user, grouped by user ID.
+
+**Applications:**
+
+- **Retention Strategies:** Identify high-value users and focus retention efforts.
+- **Revenue Insights:** Analyze user revenue contributions over time.
+- **Engagement Analysis:** Link CLV with session behavior for better targeting.
+
+---
+
+#### **12. lifetime_value_and_sessions_by_user_pseudo_id.sql**
+
+**Description:**  
+Calculates the customer lifetime value (CLV) and total sessions for each pseudonymous user.
+
+**Applications:**
+
+- **Performance Metrics:** Evaluate the correlation between sessions and revenue.
+- **Marketing ROI:** Align campaigns with pseudonymous high-value users.
+
+---
+
+#### **13. monthly_user_conversion_rate_summary.sql**
+
+**Description:**  
+Calculates monthly conversion rates by dividing converted users by total users for each month.
+
+**Applications:**
+
+- **Conversion Tracking:** Monitor month-over-month changes in user conversion rates.
+- **Trend Analysis:** Spot seasonal variations in user behavior.
+- **Performance Insights:** Measure the effectiveness of campaigns or product changes.
+
+---
+
+#### **14. num_sessions_before_purchase_by_initial_landing_page.sql**
+
+**Description:**  
+Analyzes the number of sessions a user takes before making a purchase, grouped by the user's initial landing page.
+
+**Applications:**
+
+- **Behavioral Insights:** Understand purchase patterns by entry points.
+- **Page Optimization:** Focus on landing pages with high purchase likelihood.
+- **User Journey Tracking:** Map the sessions leading to conversions.
+
+---
+
+#### **15. purchase_demographic_summary.sql**
+
+**Description:**  
+Analyzes the demographics (geo-location and device) of users who made purchases, providing insights into purchase patterns.
+
+**Applications:**
+
+- **Audience Profiling:** Identify key demographic segments driving revenue.
+- **Targeted Marketing:** Optimize campaigns based on purchase demographics.
+- **Geo and Device Insights:** Tailor strategies for high-performing regions and devices.
+
+---
+
+#### **16. signup_to_purchase_time_by_traffic_source.sql**
+
+**Description:**  
+Calculates the average time (in days) between a user's signup and their first purchase, grouped by traffic source.
+
+**Applications:**
+
+- **Funnel Analysis:** Measure the efficiency of sources in driving purchases after sign-ups.
+- **Source Optimization:** Focus on traffic sources with shorter signup-to-purchase times.
+- **Performance Tracking:** Monitor user journey timelines.
+
+---
+
+#### **17. user_acquisition_summary.sql**
+
+**Description:**  
+Analyzes user acquisition metrics, including total users and their respective acquisition sources.
+
+**Applications:**
+
+- **Marketing ROI:** Evaluate the performance of acquisition channels.
+- **Campaign Effectiveness:** Link campaigns to user acquisition success.
+- **Source Benchmarking:** Compare traffic source contributions.
+
+---
+
+#### **18. user_channel_grouping.sql**
+
+**Description:**  
+Groups users by traffic source and medium, categorizing them into predefined channel groupings like Organic Search, Paid Social, and Email.
+
+**Applications:**
+
+- **Channel Analysis:** Understand which channels are driving the most traffic.
+- **Performance Tracking:** Identify high-performing acquisition sources.
+- **Campaign Optimization:** Focus on impactful channels for ROI.
+
+---
+
+#### **19. user_ltv_by_first_page_location.sql**
+
+**Description:**  
+Calculates the lifetime value (LTV) of users based on their first page location.
+
+**Applications:**
+
+- **Page Optimization:** Enhance pages driving high-LTV users.
+- **Acquisition Insights:** Identify entry points for high-revenue users.
+- **Marketing Alignment:** Align efforts with top-performing pages.
+
+---
+
+#### **20. user_transactions_summary_by_initial_source.sql**
+
+**Description:**  
+Summarizes user transactions, including total revenue and transaction count, grouped by their first acquisition source.
+
+**Applications:**
+
+- **Source Analysis:** Measure the impact of initial sources on revenue.
+- **Retention Tracking:** Link sources to repeat transactions.
+- **Revenue Insights:** Focus on high-contributing acquisition channels.
+
+---
+
+
 
 
 
