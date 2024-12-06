@@ -30,6 +30,8 @@ This query flattens GA4 event data by unnesting arrays such as `event_params`, `
 - **Advanced Analytics:** Facilitates building advanced metrics and custom reports based on event parameters and user properties.
 - **Machine Learning:** Provides a flat data structure suitable for machine learning models and statistical analysis.
 
+---
+
 #### **2. ga4_full_metrics_summary.sql**
 
 **Description:**  
@@ -41,6 +43,8 @@ Provides a comprehensive summary of key GA4 metrics on a daily basis. It aggrega
 - **Reporting:** Generate executive summaries or dashboards highlighting overall GA4 account activity.
 - **Anomaly Detection:** Identify anomalies or significant changes in user engagement or conversions.
 
+---
+
 #### **3. measurement_protocol_event_ratio.sql**
 
 **Description:**  
@@ -51,6 +55,8 @@ Tracks the ratio of suspected measurement protocol events based on device attrib
 - **Data Quality Assurance:** Evaluate the impact of non-consented or synthetic events on your dataset.
 - **Event Filtering:** Identify and filter out events that may not represent actual user interactions.
 - **Trend Analysis:** Monitor the proportion of suspected measurement protocol events over time to ensure data integrity.
+
+---
 
 #### **4. user_event_counts_pivot_table.sql**
 
