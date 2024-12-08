@@ -1,6 +1,1 @@
-17 -  Query Billing Export
-18 - Group All Entries By Acquisition
-20- Frequently viewed items
-23- gads account name 
-24- GA4-bigquery-tips
 
