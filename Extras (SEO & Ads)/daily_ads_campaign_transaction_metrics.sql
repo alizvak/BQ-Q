@@ -12,7 +12,7 @@ FROM
 WHERE
   session_traffic_source_last_click.google_ads_campaign.campaign_name IS NOT NULL -- Filter valid campaigns
   AND ecommerce.transaction_id IS NOT NULL -- Ensure transaction ID exists
-  AND DATE(event_date) BETWEEN start_date AND end_date -- Filter by date range
+  AND  _TABLE_SUFFIX BETWEEN REPLACE(start_date, '-', '') AND REPLACE(end_date, '-', '')
 GROUP BY
   event_date, campaign_name
 ORDER BY
