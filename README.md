@@ -2,7 +2,7 @@ Welcome to the **BigQuery-GA4-Queries** repository! This open-source collection 
 
 ## What’s Included?
 
-This repository contains a +50 diverse set of **ready-to-use and fully customizable queries**, grouped into logical folders for easier access and organization. Each query is designed to handle common and advanced use cases, from session analysis and ecommerce reporting to traffic attribution and user behavior exploration.
+This repository contains a +65 diverse set of **ready-to-use and fully customizable queries**, grouped into logical folders for easier access and organization. Each query is designed to handle common and advanced use cases, from session analysis and ecommerce reporting to traffic attribution and user behavior exploration.
 
 ## How to Use
 
@@ -146,20 +146,7 @@ Explores the relationship between Customer Lifetime Value (CLV) and the number o
 
 ---
 
-#### **6. google_ads_campaigns.sql**
-
-**Description:**  
-Analyzes sessions by Google Ads campaigns, linking them to account and campaign names.
-
-**Applications:**
-
-- **Campaign Effectiveness:** Understand the impact of specific campaigns.
-- **Ad Spend ROI:** Ensure ads drive quality sessions and conversions.
-- **Optimization Opportunities:** Improve underperforming campaigns.
-
----
-
-#### **7. hourly_sessions_ecommerce_performance.sql**
+#### **6. hourly_sessions_ecommerce_performance.sql**
 
 **Description:**  
 Provides an hourly breakdown of session performance metrics, such as purchases, events, and e-commerce activity.
@@ -172,7 +159,7 @@ Provides an hourly breakdown of session performance metrics, such as purchases, 
 
 ---
 
-#### **8. items_performance_by_traffic_source.sql**
+#### **7. items_performance_by_traffic_source.sql**
 
 **Description:**  
 Analyzes purchased item names and categories across various traffic sources to identify the most effective sources for item sales.
@@ -185,7 +172,7 @@ Analyzes purchased item names and categories across various traffic sources to i
 
 ---
 
-#### **9. most_frequent_exit_pages.sql**
+#### **8. most_frequent_exit_pages.sql**
 
 **Description:**  
 Identifies the pages users are most likely to exit from, showing exit patterns by session.
@@ -198,7 +185,7 @@ Identifies the pages users are most likely to exit from, showing exit patterns b
 
 ---
 
-#### **10. new_user_sequential_page_navigation_steps.sql**
+#### **9. new_user_sequential_page_navigation_steps.sql**
 
 **Description:**  
 Tracks sequential page navigation steps for new users, showing their paths across the first few interactions.
@@ -211,7 +198,7 @@ Tracks sequential page navigation steps for new users, showing their paths acros
 
 ---
 
-#### **11. page_value_and_revenue_attribution_report.sql**
+#### **10. page_value_and_revenue_attribution_report.sql**
 
 **Description:**  
 Calculates the revenue attributed to each page location visited before a purchase. Uses a first-click attribution model for insights into pages influencing purchases.
@@ -224,7 +211,7 @@ Calculates the revenue attributed to each page location visited before a purchas
 
 ---
 
-#### **12. previous_next_page_path_analysis.sql**
+#### **11. previous_next_page_path_analysis.sql**
 
 **Description:**  
 Analyzes user navigation by identifying previous and next page paths for each page view.
@@ -237,7 +224,7 @@ Analyzes user navigation by identifying previous and next page paths for each pa
 
 ---
 
-#### **13. purchases_by_last_landing_page.sql**
+#### **12. purchases_by_last_landing_page.sql**
 
 **Description:**  
 Tracks the last landing page before a user makes a purchase, providing insights into pages that convert visitors into buyers.
@@ -250,7 +237,7 @@ Tracks the last landing page before a user makes a purchase, providing insights 
 
 ---
 
-#### **14. retention_cohort_analysis.sql**
+#### **13. retention_cohort_analysis.sql**
 
 **Description:**  
 Adds retention cohort analysis by weekly engagement, tracking how many users return and engage across multiple weeks.
@@ -262,7 +249,7 @@ Adds retention cohort analysis by weekly engagement, tracking how many users ret
 
 ---
 
-#### **15. session_channel_grouping.sql**
+#### **14. session_channel_grouping.sql**
 
 **Description:**  
 Groups sessions by traffic source and medium, categorizing them into predefined channel groupings like Organic Search, Paid Social, and Email.
@@ -274,7 +261,7 @@ Groups sessions by traffic source and medium, categorizing them into predefined 
 
 ---
 
-#### **16. session_conversion_rate.sql**
+#### **15. session_conversion_rate.sql**
 
 **Description:**  
 Analyzes the session conversion rate by comparing the number of sessions with a purchase against total sessions.
@@ -286,7 +273,7 @@ Analyzes the session conversion rate by comparing the number of sessions with a 
 
 ---
 
-#### **17. top_10_landing_page.sql**
+#### **16. top_10_landing_page.sql**
 
 **Description:**  
 Lists the 10 most popular landing pages, ranked by unique user visits. Provides data on entrance rates and page performance.
@@ -299,7 +286,7 @@ Lists the 10 most popular landing pages, ranked by unique user visits. Provides 
 
 ---
 
-#### **18. traffic_acquisition_summary.sql**
+#### **17. traffic_acquisition_summary.sql**
 
 **Description:**  
 Analyzes traffic acquisition and related metrics, providing insights into the performance of acquisition campaigns by source and medium.
@@ -761,6 +748,128 @@ Analyzes Looker Studio report-level job activity and costs, focusing on dashboar
 - **Usage Insights:** Monitor Looker Studio query patterns.
 
 ---
+### Extras (SEO & Ads)
+
+**Focus Area:** This section includes a range of advanced queries focused on SEO and Google Ads performance metrics. The queries combine GA4 and Google Search Console (GSC) exports to provide deeper insights into campaign and query performance.
+
+---
+
+#### **1. anonymized_vs_non_anonymized_queries_comparison.sql**
+
+**Description:**  
+Analyzes anonymized vs. non-anonymized query metrics, comparing their click, impression, and query ratios.
+
+**Applications:**
+
+- **Search Query Analysis:** Understand the impact of anonymized queries on search metrics.
+- **Performance Gap Analysis:** Identify potential gaps in search visibility caused by anonymized queries.
+
+---
+
+#### **2. average_ctr_by_position.sql**
+
+**Description:**  
+Computes average click-through rate (CTR) by search result position.
+
+**Applications:**
+
+- **CTR Optimization:** Improve metadata (titles, descriptions) to enhance CTR at specific positions.
+- **Performance Benchmarking:** Assess how position affects CTR.
+
+---
+
+#### **3. ctr_vs_position_correlation.sql**
+
+**Description:**  
+Computes the correlation between click-through rate (CTR) and average position in search results. Ideal correlation is -1, while values less than -0.4 indicate strong correlation. Positive values are unexpected.
+
+**Applications:**
+
+- **SEO Strategy Refinement:** Understand the relationship between ranking position and CTR.
+- **Performance Prediction:** Gauge how ranking improvements might affect CTR.
+
+**Note:** Requires Search Console export.
+
+---
+
+#### **4. daily_ads_campaign_transaction_metrics.sql**
+
+**Description:**  
+Tracks Google Ads campaign performance, aggregating daily revenue, transactions, and unique user counts.
+
+**Applications:**
+
+- **Campaign Monitoring:** Evaluate and compare daily campaign performance.
+- **Optimization:** Identify campaigns with the highest returns.
+
+---
+
+#### **5. gads_cross_channel_campaign_performance.sql**
+
+**Description:**  
+Analyzes Google Ads performance across primary channel groups, combining metrics like revenue and user engagement.
+
+**Applications:**
+
+- **Cross-Channel Evaluation:** Assess the effectiveness of campaigns across channels.
+- **Performance Insights:** Identify high-performing channel groups.
+
+---
+
+#### **6. google_ads_campaigns.sql**
+
+**Description:**  
+Aggregates Google Ads account and campaign-level performance metrics, such as session counts.
+
+**Applications:**
+
+- **Detailed Campaign Reporting:** Provide in-depth analysis of campaign activity.
+- **Optimization:** Pinpoint underperforming campaigns for improvement.
+
+---
+
+#### **7. most_valued_organic_keywords.sql**
+
+**Description:**  
+Combines GA4 and GSC exports to identify the most valuable organic keywords based on share of voice (SOV) and conversion rates.
+
+**Applications:**
+
+- **SEO Optimization:** Focus on high-performing organic keywords.
+- **Strategic Content Planning:** Align content creation with keyword performance.
+- **ROI-focused Ads:** Pinpoint keywords with strong ROI for potential paid ad targeting.
+
+**Note:** Requires Search Console export.
+
+---
+
+#### **8. search_feature_overview.sql**
+
+**Description:**  
+Analyzes the prevalence of various Google search features (e.g., AMP, video, shopping results) based on boolean flags.
+
+**Applications:**
+
+- **Feature Tracking:** Check which features you track.  
+- **Metrics Overview:** Analyze metrics for various search result features.
+
+**Note:** Requires Search Console export.
+
+---
+
+#### **9. top_queries_by_device_performance.sql**
+
+**Description:**  
+Aggregates search query performance by device type, including metrics like CTR and average position.
+
+**Applications:**
+
+- **Device-Specific Insights:** Tailor campaigns for device-specific performance.
+- **SEO Optimization:** Improve mobile or desktop search strategies.
+
+**Note:** Requires Search Console export.
+
+--- 
 
 
 ## Open-Source Collaboration
