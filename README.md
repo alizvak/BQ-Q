@@ -1,4 +1,4 @@
-Welcome to the **BigQuery-GA4-Queries** repository! This open-source collection is a curated set of SQL queries specifically designed for analyzing and extracting insights from **Google Analytics 4 (GA4)** exported data in BigQuery. Over years of working with GA4 data exports, these queries have become my go-to tools for daily reporting and analysis, and now I’m making them available for everyone to use and adapt..
+Welcome to the **BigQuery-GA4-Queries** repository! This open-source collection is a curated set of SQL queries specifically designed for analyzing and extracting insights from **Google Analytics 4 (GA4)** exported data in BigQuery. Over years of working with GA4 data exports, these queries have become my go-to tools for daily reporting and analysis. Now, I’m making them available for everyone to use and adapt.
 
 ## What’s Included?
 
@@ -10,7 +10,7 @@ This repository contains a +65 diverse set of **ready-to-use and fully customiza
 2. Adjust the `DECLARE` statements at the beginning of each query to define your desired reporting dates.
 3. Run the queries in BigQuery to instantly generate reports tailored to your needs.
 
-   -- Ensure you have active GA4 export and **BigQuery Admin** access to a project—no prior SQL knowledge is required.
+`Ensure you have active GA4 exports and BigQuery Admin access to a project—no prior SQL knowledge is required.`
 
 ## Query Handbook
 
@@ -872,12 +872,37 @@ Aggregates search query performance by device type, including metrics like CTR a
 **Note:** Requires Search Console export.
 
 --- 
+## Collaboration Guidelines
+
+This repository is open-source and welcomes contributions from the community. Below are the collaboration guidelines and standards to maintain consistency and usability.
+
+---
+
+### **Contribution Standards**
+
+1. **Declare Date Ranges:**  
+   Always declare date ranges explicitly in the query using `DECLARE` statements for `start_date` and `end_date`. This makes the queries reusable and easy to customize for various date ranges.
+
+2. **Redacted Table References:**  
+   Use generic, redacted table names like `project.dataset.table_*` instead of specific project or dataset names. This ensures the query remains accessible and reusable across different environments.
+
+3. **Descriptive Commit Names and Messages:**  
+   - **Commit Name:** Provide a concise and meaningful name summarizing the query's purpose. For example, *"CTR vs. Position Correlation"*.
+   - **Commit Message:** Offer a detailed description of what the query does and its practical applications. If applicable, explain any specific features or optimizations added.
+
+   Example:
+   ```
+   Commit Name: "Daily CTR and Position Analysis"
+   Commit Message: 
+   - Computes daily CTR and position correlation from Search Console export.
+   - Identifies relationships between CTR and search positions.
+   - Includes declared date ranges and table placeholders.
+   ```
+
+4. **Update the README (Optional):**  
+   For significant new additions or updates, add the query details to the README file:
+   - **Description:** Provide a brief explanation of what the query does.
+   - **Applications:** Highlight the practical use cases.
+   - **Format:** Follow the structure and format of existing entries in the README.
 
 
-## Open-Source Collaboration
-
-This repository is and will always remain **open source**. Contributions are highly encouraged! If you have suggestions, improvements, or new queries to share,feel free to submit a pull request. Together, we can expand this library into a comprehensive resource for GA4 analysis.
-
-## About This Repository
-
-These queries are the culmination of years of experience working with GA4 export data in BigQuery. While I strive to maintain their accuracy and compatibility, some queries may have issues or require updates over time. Please report any bugs or inconsistencies by creating an issue in this repository.
