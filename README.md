@@ -1,4 +1,4 @@
-Welcome to the **BigQuery-GA4-Queries** repository! This open-source collection is a curated set of SQL queries specifically designed for analyzing and extracting insights from **Google Analytics 4 (GA4)** exported data in BigQuery. Over years of working with GA4 data exports, these queries have become my go-to tools for daily reporting and analysis, and I am excited to share them.
+Welcome to the **BigQuery-GA4-Queries** repository! This open-source collection is a curated set of SQL queries specifically designed for analyzing and extracting insights from **Google Analytics 4 (GA4)** exported data in BigQuery. Over years of working with GA4 data exports, these queries have become my go-to tools for daily reporting and analysis, and now I’m making them available for everyone to use and adapt..
 
 ## What’s Included?
 
@@ -9,6 +9,8 @@ This repository contains a +65 diverse set of **ready-to-use and fully customiza
 1. Replace placeholder project IDs and dataset names in each query with your specific BigQuery identifiers.
 2. Adjust the `DECLARE` statements at the beginning of each query to define your desired reporting dates.
 3. Run the queries in BigQuery to instantly generate reports tailored to your needs.
+
+   -- Ensure you have active GA4 export and **BigQuery Admin** access to a project—no prior SQL knowledge is required.
 
 ## Query Handbook
 
